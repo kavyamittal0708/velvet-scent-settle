@@ -106,6 +106,7 @@
 @theme inline {
   --font-display: var(--font-display);
   --font-sans: var(--font-body);
+  --color-cream: var(--cream);
 }
 
 
