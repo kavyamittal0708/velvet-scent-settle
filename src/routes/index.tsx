@@ -1,17 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Instagram, Facebook, Twitter } from "lucide-react";
+import bottle from "@/assets/velvet-bottle.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VELVET by Sarkar Perfume | Vanilla, Amber & Tonka Parfum" },
+      { title: "VELVET by Sarkar | Vanilla · Amber · Tonka Eau de Parfum" },
       {
         name: "description",
         content:
           "VELVET — a warm vanilla, amber and tonka eau de parfum from the Sarkar collection. 100ml, unisex, ₹1,799 incl. of all taxes.",
       },
-      { property: "og:title", content: "VELVET by Sarkar Perfume" },
+      { property: "og:title", content: "VELVET by Sarkar" },
       {
         property: "og:description",
         content: "Warm. Quiet. Unshaken. Vanilla · Amber · Tonka. 100ml Eau de Parfum.",
@@ -25,103 +26,122 @@ export const Route = createFileRoute("/")({
 
 function Velvet() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Hero */}
-      <header className="border-b border-border">
-        <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
-          <span className="tracked text-xs text-muted-foreground">Sarkar Perfume</span>
-          <span className="tracked text-xs text-primary">Unisex</span>
+    <div className="min-h-screen bg-background font-sans text-foreground">
+      {/* Announcement + nav */}
+      <div className="bg-primary py-2.5 text-center">
+        <p className="text-[0.6rem] font-medium tracking-[0.18em] text-primary-foreground">
+          CLAIM TWO 7ML FREEBIES WITH EVERY ORDER
+        </p>
+      </div>
+      <header className="sticky top-0 z-10 border-b border-border bg-background">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+          <span className="text-[0.6rem] tracking-[0.2em] text-muted-foreground">UNISEX</span>
+          <span className="font-display text-xl font-extrabold tracking-[0.35em]">SARKAR</span>
+          <a
+            href="#buy"
+            className="bg-primary px-4 py-2 text-[0.65rem] font-medium tracking-[0.1em] text-primary-foreground"
+          >
+            Buy Now
+          </a>
         </nav>
-        <section className="mx-auto max-w-5xl px-6 pb-24 pt-16 text-center sm:pb-32 sm:pt-24">
-          <h1 className="font-display text-7xl font-light leading-none tracking-[0.12em] sm:text-9xl">
-            VELVET
-          </h1>
-          <p className="tracked mt-8 text-[0.65rem] text-muted-foreground sm:text-xs">
-            Warm. Quiet. Unshaken.
-          </p>
-          <Button variant="gold" size="wide" className="mt-12">
-            Explore Parfum
-          </Button>
-        </section>
       </header>
 
+      {/* Hero */}
+      <section className="bg-cream px-5 py-24 text-center sm:py-32">
+        <h1 className="font-display text-6xl font-extrabold leading-[0.95] tracking-tight sm:text-8xl">
+          VELVET
+        </h1>
+        <p className="mt-6 text-[0.65rem] font-medium tracking-[0.35em] text-muted-foreground sm:text-xs">
+          WARM. QUIET. UNSHAKEN.
+        </p>
+        <Button variant="goldSolid" size="wide" className="mt-10 text-[0.65rem]" asChild>
+          <a href="#product">Explore Parfum</a>
+        </Button>
+      </section>
+
       {/* Notes */}
-      <section className="border-b border-border px-6 py-20 text-center">
-        <div className="mx-auto inline-flex max-w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 border border-primary/40 px-6 py-4">
-          <span className="tracked text-[0.65rem] text-primary sm:text-xs">Vanilla</span>
-          <span className="text-primary/50">·</span>
-          <span className="tracked text-[0.65rem] text-primary sm:text-xs">Amber</span>
-          <span className="text-primary/50">·</span>
-          <span className="tracked text-[0.65rem] text-primary sm:text-xs">Tonka</span>
+      <section className="border-y border-border px-5 py-16 text-center sm:py-20">
+        <div className="flex flex-wrap justify-center gap-2">
+          {["VANILLA", "AMBER", "TONKA"].map((n) => (
+            <span
+              key={n}
+              className="bg-secondary px-4 py-2 text-[0.65rem] font-medium tracking-[0.2em]"
+            >
+              {n}
+            </span>
+          ))}
         </div>
-        <p className="mx-auto mt-8 max-w-md font-display text-xl font-light leading-relaxed text-muted-foreground sm:text-2xl">
+        <p className="mx-auto mt-8 max-w-md font-display text-xl font-semibold leading-snug sm:text-2xl">
           Power doesn't shout. It settles into a room and stays.
         </p>
       </section>
 
-      {/* Product image placeholder */}
-      <section className="border-b border-border px-6 py-20">
+      {/* Product */}
+      <section id="product" className="px-5 py-16 sm:py-24">
         <div className="mx-auto max-w-md">
-          <div
-            data-bottle-placeholder
-            className="flex aspect-[3/4] w-full items-center justify-center border border-border bg-card"
-          >
-            <span className="tracked px-6 text-center text-[0.6rem] text-muted-foreground">
-              Sarkar bottle image
-            </span>
-          </div>
-          <p className="tracked mt-6 text-center text-[0.6rem] text-muted-foreground">
-            100ml · Eau de Parfum
+          <img
+            src={bottle}
+            alt="VELVET by Sarkar — chess-piece perfume bottle with pale honey yellow parfum, 100ml"
+            width={1024}
+            height={1280}
+            className="mx-auto w-full max-w-sm"
+          />
+          <p className="mt-6 text-center text-[0.65rem] font-medium tracking-[0.25em] text-muted-foreground">
+            100ML · EAU DE PARFUM
           </p>
         </div>
       </section>
 
       {/* Story */}
-      <section className="border-b border-border px-6 py-20 text-center">
-        <h2 className="tracked text-[0.6rem] text-primary">The House of Sarkar</h2>
-        <p className="mx-auto mt-8 max-w-xl font-display text-2xl font-light leading-relaxed sm:text-3xl">
-          Velvet joins Throne, Regal, Noble and Orion as the quietest force in the Sarkar
-          collection. Where the others declare, Velvet lingers — vanilla and amber worn close to
-          the skin. Composure, bottled.
+      <section className="bg-cream px-5 py-20 text-center sm:py-24">
+        <h2 className="text-[0.6rem] font-medium tracking-[0.3em] text-muted-foreground">
+          THE SARKAR COLLECTION
+        </h2>
+        <p className="mx-auto mt-6 max-w-2xl font-display text-2xl font-semibold leading-snug sm:text-3xl">
+          Velvet stands beside Throne, Regal, Noble and Orion as the calmest presence on the shelf.
+          Vanilla and amber worn close to the skin, tonka holding the last word. Composure, bottled.
         </p>
       </section>
 
       {/* Pricing */}
-      <section className="px-6 py-24 text-center">
-        <p className="font-display text-5xl font-light tracking-wide sm:text-6xl">₹1,799</p>
-        <Button variant="goldSolid" size="wide" className="mt-10">
+      <section id="buy" className="px-5 py-20 text-center sm:py-24">
+        <h2 className="font-display text-3xl font-extrabold tracking-tight">
+          VELVET <span className="text-lg font-semibold">(100ML)</span>
+        </h2>
+        <p className="mt-6 font-display text-4xl font-bold">₹1,799</p>
+        <Button variant="goldSolid" size="wide" className="mt-8 text-[0.65rem]">
           Add to Cart
         </Button>
-        <p className="tracked mt-6 text-[0.55rem] text-muted-foreground">Incl. of all taxes</p>
+        <p className="mt-4 text-[0.7rem] text-muted-foreground">Incl. of all taxes</p>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border px-6 py-14">
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 text-center">
-          <span className="font-display text-2xl tracking-[0.3em]">SARKAR</span>
+      <footer className="border-t border-border px-5 py-14">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-7 text-center">
+          <span className="font-display text-xl font-extrabold tracking-[0.35em]">SARKAR</span>
           <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3">
             {["Shop All", "Know Sarkar", "Contact"].map((l) => (
               <a
                 key={l}
                 href="#"
-                className="tracked text-[0.6rem] text-muted-foreground hover:text-primary"
+                className="text-[0.7rem] tracking-[0.12em] text-muted-foreground hover:text-foreground"
               >
                 {l}
               </a>
             ))}
           </nav>
           <div className="flex gap-6 text-muted-foreground">
-            <a href="#" aria-label="Instagram" className="hover:text-primary">
+            <a href="#" aria-label="Instagram" className="hover:text-foreground">
               <Instagram className="size-4" />
             </a>
-            <a href="#" aria-label="Facebook" className="hover:text-primary">
+            <a href="#" aria-label="Facebook" className="hover:text-foreground">
               <Facebook className="size-4" />
             </a>
-            <a href="#" aria-label="Twitter" className="hover:text-primary">
+            <a href="#" aria-label="Twitter" className="hover:text-foreground">
               <Twitter className="size-4" />
             </a>
           </div>
-          <p className="tracked text-[0.55rem] text-muted-foreground">
+          <p className="text-[0.65rem] tracking-[0.1em] text-muted-foreground">
             © 2026 Sarkar Perfume. All rights reserved.
           </p>
         </div>
