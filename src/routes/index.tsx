@@ -47,15 +47,27 @@ function Velvet() {
       </header>
 
       {/* Hero */}
-      <section className="bg-cream px-5 py-24 text-center sm:py-32">
-        <h1 className="font-display text-6xl font-extrabold leading-[0.95] tracking-tight sm:text-8xl">
+      <section id="product" className="bg-cream px-5 pb-24 pt-10 text-center sm:pb-32 sm:pt-14">
+        <div className="mx-auto max-w-md">
+          <img
+            src={bottle}
+            alt="VELVET by Sarkar — chess-piece perfume bottle with pale honey yellow parfum, 100ml"
+            width={1024}
+            height={1280}
+            className="mx-auto w-full max-w-sm"
+          />
+          <p className="mt-5 text-[0.65rem] font-medium tracking-[0.25em] text-muted-foreground">
+            100ML · EAU DE PARFUM
+          </p>
+        </div>
+        <h1 className="mt-12 font-display text-6xl font-extrabold leading-[0.95] tracking-tight sm:text-8xl">
           VELVET
         </h1>
         <p className="mt-6 text-[0.65rem] font-medium tracking-[0.35em] text-muted-foreground sm:text-xs">
           WARM. QUIET. UNSHAKEN.
         </p>
         <Button variant="goldSolid" size="wide" className="mt-10 text-[0.65rem]" asChild>
-          <a href="#product">Explore Parfum</a>
+          <a href="#buy">Explore Parfum</a>
         </Button>
       </section>
 
@@ -74,22 +86,6 @@ function Velvet() {
         <p className="mx-auto mt-8 max-w-md font-display text-xl font-semibold leading-snug sm:text-2xl">
           Power doesn't shout. It settles into a room and stays.
         </p>
-      </section>
-
-      {/* Product */}
-      <section id="product" className="px-5 py-16 sm:py-24">
-        <div className="mx-auto max-w-md">
-          <img
-            src={bottle}
-            alt="VELVET by Sarkar — chess-piece perfume bottle with pale honey yellow parfum, 100ml"
-            width={1024}
-            height={1280}
-            className="mx-auto w-full max-w-sm"
-          />
-          <p className="mt-6 text-center text-[0.65rem] font-medium tracking-[0.25em] text-muted-foreground">
-            100ML · EAU DE PARFUM
-          </p>
-        </div>
       </section>
 
       {/* Story */}
