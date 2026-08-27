@@ -30,7 +30,7 @@ function Velvet() {
       {/* Announcement + nav */}
       <div className="bg-primary py-2.5 text-center">
         <p className="text-[0.6rem] font-medium tracking-[0.18em] text-primary-foreground">
-          CLAIM TWO 7ML FREEBIES WITH EVERY ORDER
+          TWO 5ML SAMPLES FREE WITH EVERY ORDER
         </p>
       </div>
       <header className="sticky top-0 z-10 border-b border-border bg-background">
